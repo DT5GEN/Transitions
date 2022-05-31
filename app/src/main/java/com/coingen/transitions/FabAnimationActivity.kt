@@ -3,12 +3,12 @@ package com.coingen.transitions
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class FabAnimationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +41,7 @@ class FabAnimationActivity : AppCompatActivity() {
 
             blur.animate()
                 .alpha(0.0f)
-                .setDuration(200L)
+                .setDuration(300L)
                 .setListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator?) {
                         super.onAnimationEnd(animation)
@@ -50,6 +50,66 @@ class FabAnimationActivity : AppCompatActivity() {
                     }
                 })
             ObjectAnimator.ofFloat(icon, "rotation", -0f).start()
+
+            option1.apply{
+                alpha = 1.0f
+                translationY = 0f
+                visibility = View.VISIBLE
+            }
+            option1.animate()
+                .alpha(0.0f)
+                .translationY(menuItemHeight)
+                .setDuration(150L)
+                .setListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator?) {
+                        super.onAnimationEnd(animation)
+                        option1.visibility = View.GONE
+
+
+                        option2.apply {
+                            alpha = 1.0f
+                            translationY = 0f
+                            visibility = View.VISIBLE
+                        }
+
+                        option2.animate()
+                            .alpha(0.0f)
+                            .translationY(2 * menuItemHeight + menuItemMargin)
+                            .setDuration(150L)
+                            .setListener(object : AnimatorListenerAdapter() {
+                                override fun onAnimationEnd(animation: Animator?) {
+                                    super.onAnimationEnd(animation)
+                                    option2.visibility = View.GONE
+
+                                    option3.apply{
+                                        alpha = 1.0f
+                                        translationY = 0.0f
+                                        visibility = View.VISIBLE
+                                    }
+
+
+                                    option3.animate()
+                                        .alpha(0.0f)
+                                        .translationY( 3 * menuItemHeight + 2* menuItemMargin)
+                                        .setDuration(150L)
+                                        .setListener(object : AnimatorListenerAdapter() {
+                                            override fun onAnimationEnd(animation: Animator?) {
+                                                super.onAnimationEnd(animation)
+                                                option3.visibility = View.GONE
+                                            }}).start()
+
+
+                                }
+                            }).start()
+
+
+//                        blur.setOnClickListener {
+//                            closeMenu()
+//                        }
+
+                    }})
+                .start()
+
         }
 
         fun openMenu() {
@@ -59,7 +119,7 @@ class FabAnimationActivity : AppCompatActivity() {
 
             blur.animate()
                 .alpha(0.9f)
-                .setDuration(800L)
+                .setDuration(500L)
                 .setListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator?) {
                         super.onAnimationEnd(animation)
@@ -71,7 +131,62 @@ class FabAnimationActivity : AppCompatActivity() {
                         }
                     }
                 })
-            ObjectAnimator.ofFloat(icon, "rotation", 135f).start()
+            ObjectAnimator.ofFloat(icon, "rotation", 135f).setDuration(750).start()
+
+            option3.apply{
+                alpha = 0.0f
+                translationY = menuItemHeight
+                visibility = View.VISIBLE
+            }
+            option3.animate()
+                .alpha(1.0f)
+                .translationY(0f)
+                .setDuration(100L)
+                .setListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator?) {
+                        super.onAnimationEnd(animation)
+
+                        option2.apply {
+                            alpha = 0.0f
+                            translationY = 2 * menuItemHeight + menuItemMargin
+                            visibility = View.VISIBLE
+                        }
+
+                        option2.animate()
+                            .alpha(1.0f)
+                            .translationY(0f)
+                            .setDuration(200L)
+                            .setListener(object : AnimatorListenerAdapter() {
+                                override fun onAnimationEnd(animation: Animator?) {
+                                    super.onAnimationEnd(animation)
+
+                                    option1.apply{
+                                        alpha = 0.0f
+                                        translationY = 3 * menuItemHeight + 2* menuItemMargin
+                                        visibility = View.VISIBLE
+                                    }
+
+
+                                    option1.animate()
+                                        .alpha(1.0f)
+                                        .translationY(0f)
+                                        .setDuration(250L)
+                                        .setListener(object : AnimatorListenerAdapter() {
+                                            override fun onAnimationEnd(animation: Animator?) {
+                                                super.onAnimationEnd(animation)
+                                            }}).start()
+
+
+                                            }
+                            }).start()
+
+
+//                        blur.setOnClickListener {
+//                            closeMenu()
+//                        }
+
+                    }})
+                .start()
         }
 
 
