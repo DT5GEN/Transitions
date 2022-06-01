@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Transitions"
         tools:targetApi="31">
         <activity
-            android:name=".FabAnimationActivity"
+            android:name=".ConstraintsActivity"
             android:exported="true" >
 
             <intent-filter>
@@ -22,6 +22,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".FabAnimationActivity"
+            android:exported="true">
 
         </activity>
         <activity

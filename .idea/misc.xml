@@ -5,12 +5,16 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/drawable/bg_fab.xml" value="0.1365" />
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1365" />
-        <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_fab_animation.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/drawable/toolbar_selector.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_constraints.xml" value="0.19293478260869565" />
+        <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_fab_animation.xml" value="0.21067415730337077" />
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_image_animation.xml" value="0.30480072463768115" />
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_shuffle.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_traectory.xml" value="0.12092391304347826" />
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/activity_transition.xml" value="0.25181159420289856" />
         <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/item_buttom.xml" value="0.25181159420289856" />
+        <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/layout_end.xml" value="0.19293478260869565" />
+        <entry key="..\:/AndroidStudioProjects/Transitions/app/src/main/res/layout/layout_start.xml" value="0.19293478260869565" />
       </map>
     </option>
   </component>
